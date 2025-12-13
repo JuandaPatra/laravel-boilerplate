@@ -1,0 +1,10 @@
+services:
+  laravel:
+    build: .
+    container_name: laravel-php82
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "8000:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
