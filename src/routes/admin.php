@@ -14,8 +14,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
      Route::group(['middleware' => ['role:super-admin|admin']], function () {
-        Route::get('/admin-dashboard', function(){
-            return view('admin.dashboard.index');
-        })->name('admin.dashboard');
-     });
+         Route::get('/admin-dashboard', function(){
+             return view('admin.dashboard.index');
+         })->name('admin.dashboard');
+   
+    });
 });

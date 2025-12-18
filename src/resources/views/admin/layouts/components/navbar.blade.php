@@ -79,9 +79,9 @@
       </li>
       
       <li class="nav-item lh-1 me-3">
-        {{-- 
+        
             <a class="github-button" href="" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Auth::user()->name </a>
-            --}}
+            
 
 
       </li>
@@ -103,12 +103,12 @@
                     <i class="bx bx-user-circle  bx-md"></i>
                   </div>
                 </div>
-                {{-- 
+                 
                     <div class="flex-grow-1">
                       <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
                       <small class="text-muted">{{Auth::user()->name}}</small>
                     </div>
-                    --}}
+                    
               </div>
             </a>
           </li>
