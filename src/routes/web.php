@@ -22,3 +22,10 @@ Route::resource('product', ProductController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route Halaman Admin
+Route::group([], __DIR__.'/admin.php');
+
+// route untuk tools (clear cache, clear config, clear view, etc)
+Route::group([], __DIR__.'/tools.php');

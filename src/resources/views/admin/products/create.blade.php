@@ -8,7 +8,7 @@ Category Add
 @section('content')
 <div class="row">
     <div class="col-12 col-md-12">
-        <form action="{{route('product.store')}}" method="POST">
+        <form action="{{route('product.store')}}" method="POST" id="productForm">
             @csrf
             <div class="card mb-4">
                 <h5 class="card-header">Add Product</h5>
@@ -131,6 +131,11 @@ Category Add
             selector: '#input_post_price',
             separator: '.'
         })
+
+        document.getElementById('productForm').addEventListener('submit', function() {
+            const input = document.getElementById('input_post_price');
+            input.value = input.value.replace(/\./g, '');
+        });
 
         // tinymce for content
         $("#input_post_content").tinymce({
