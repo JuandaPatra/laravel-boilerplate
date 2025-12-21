@@ -82,6 +82,20 @@
     </li> 
     @endrole
 
+    <li class="menu-item  active open">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon bx bx-carousel"></i>
+        <div data-i18n="Layouts">Settings</div>
+      </a>
+      <ul class="menu-sub active">
+        <li class="menu-item active">
+          <a href="" class="menu-link">
+            <div data-i18n="Without menu">Edit</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+
     {{--
       <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Konten</span>

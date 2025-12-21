@@ -52,7 +52,7 @@ Category Add
                      <option value="">Please Select</option>
                      
                         @foreach ($roles as $key =>$value)
-                        <option value="{{ $value->id }}" {{ old('role') == $key ? "selected" : null }}> {{ $value->name }}</option>
+                        <option value="{{ $value->name }}" {{ old('role') == $key ? "selected" : null }}> {{ $value->name }}</option>
                         @endforeach
                         
                   </select>

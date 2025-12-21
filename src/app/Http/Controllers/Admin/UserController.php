@@ -34,7 +34,7 @@ class UserController extends Controller
             ->addIndexColumn()
              ->addColumn('action', function ($user) {
 
-                $deleteUrl = route('roles.destroy', $user->id);
+                $deleteUrl = route('users.destroy', $user->id);
 
                 return '
                 <a href="' .route('roles.edit', $user->id) . '" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
@@ -68,6 +68,7 @@ class UserController extends Controller
             'role' => 'required'
         ]);
 
+
         if ($validator->fails()) {
             Alert::error('Error', 'Silahkan lengkapi semua data '. $validator->errors()->first());
             return redirect('/users/create')
@@ -92,7 +93,7 @@ class UserController extends Controller
 
 
         } catch (\throwable $th) {
-            // DB::rollBack();
+            DB::rollBack();
             return redirect()->back()->withInput($request->all());
             Alert::error('Error', 'Silahkan lengkapi semua data '. $th->getMessage());
             \Log::error($e->getMessage());
@@ -116,6 +117,10 @@ class UserController extends Controller
        try{
             DB::transaction(function () use ($id) {
             $user = User::findOrFail($id);
+            if($user->hasRole('super-admin')){
+                Alert::error('Error', 'Tidak dapat menghapus user dengan role super-admin');
+                return redirect()->back();
+            }
 
            
             $user->delete();

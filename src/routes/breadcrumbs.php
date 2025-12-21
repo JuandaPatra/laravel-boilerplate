@@ -47,3 +47,16 @@ Breadcrumbs::for('role-edit', function (BreadcrumbTrail $trail, $role) {
     $trail->parent('roles');
     $trail->push('Edit / '. $role->id, route('roles.edit', $role->id));
 });
+
+Breadcrumbs::for('users', function (BreadcrumbTrail $trail) {
+    $trail->push('Users', route('users.index'));
+});
+
+Breadcrumbs::for('user-edit', function (BreadcrumbTrail $trail, $user) {
+    $trail->parent('users');
+    $trail->push('Edit / '. $user->id, route('users.edit', $user->id));
+});
+
+Breadcrumbs::for('settings', function (BreadcrumbTrail $trail) {
+    $trail->push('Settings', route('settings.index'));
+});
