@@ -1,10 +1,16 @@
 services:
   laravel:
-    build: .
     container_name: laravel-php82
-    volumes:
-      - ./src:/var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8000:80"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./src:/var/www/html
+      - laravel_vendor:/var/www/html/vendor
+    depends_on:
+      - mysql
+
+volumes:
+  laravel_vendor:

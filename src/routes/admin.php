@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,30 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
      Route::group(['middleware' => ['role:super-admin|admin']], function () {
-         Route::get('/admin-dashboard', function(){
-             return view('admin.dashboard.index');
-         })->name('admin.dashboard');
-   
+        Route::get('/admin-dashboard', function(){
+            return view('admin.dashboard.index');
+        })->name('admin.dashboard');
+
+        // Route untuk manajemen user, hanya bisa diakses oleh super-admin
+        Route::group(['middleware' => ['role:super admin']], function () {
+
+        });
+        
+
+        // Route untuk manajemen produk, bisa diakses oleh super-admin dan admin
+        Route::group(['middleware' => ['role:super-admin|admin']], function () {
+        Route::post('product/{slug}/edit', [ProductController::class, 'update'])->name('product.update-new');
+        Route::get('product/ajax-table', [ProductController::class, 'tableProduct'] )->name('product.ajax');
+        Route::resource('product', ProductController::class);
+
+
+        Route::get('roles/ajax', [App\Http\Controllers\Admin\RoleController::class, 'ajax'])->name('roles.ajax');
+        Route::resource('roles', App\Http\Controllers\Admin\RoleController::class);
+        
+        Route::get('users/ajax', [App\Http\Controllers\Admin\UserController::class, 'ajax'])->name('users.ajax');
+        Route::resource('users', App\Http\Controllers\Admin\UserController::class);});
+            
+        // ajax tools
+        Route::get('tools/ajax-roles', [App\Http\Controllers\Admin\AjaxToolsController::class, 'ajaxRoles'])->name('tools.ajax.roles');
     });
 });

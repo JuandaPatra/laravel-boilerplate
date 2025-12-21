@@ -42,6 +42,45 @@
         </li>
       </ul>
     </li>
+    @role('super-admin')
+     <li class="menu-item  active open">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon bx bx-carousel"></i>
+        <div data-i18n="Layouts">Roles</div>
+      </a>
+      <ul class="menu-sub active">
+        <li class="menu-item active">
+          <a href="" class="menu-link">
+            <div data-i18n="Without menu">List</div>
+          </a>
+        </li>
+        <li class="menu-item ">
+          <a href="" class="menu-link">
+            <div data-i18n="Without navbar">Create</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+     <li class="menu-item  active open">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon bx bx-carousel"></i>
+        <div data-i18n="Layouts">Users</div>
+      </a>
+      <ul class="menu-sub active">
+        <li class="menu-item active">
+          <a href="" class="menu-link">
+            <div data-i18n="Without menu">List</div>
+          </a>
+        </li>
+        <li class="menu-item ">
+          <a href="" class="menu-link">
+            <div data-i18n="Without navbar">Create</div>
+          </a>
+        </li>
+      </ul>
+    </li> 
+    @endrole
 
     {{--
       <li class="menu-header small text-uppercase">

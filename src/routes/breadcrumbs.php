@@ -38,3 +38,12 @@ Breadcrumbs::for('product-edit', function (BreadcrumbTrail $trail, $product) {
     $trail->parent('product');
     $trail->push('Edit / '. $product->slug, route('product.edit', $product->slug));
 });
+
+Breadcrumbs::for('roles', function (BreadcrumbTrail $trail) {
+    $trail->push('Roles', route('roles.index'));
+});
+
+Breadcrumbs::for('role-edit', function (BreadcrumbTrail $trail, $role) {
+    $trail->parent('roles');
+    $trail->push('Edit / '. $role->id, route('roles.edit', $role->id));
+});
