@@ -24,18 +24,18 @@
     </li>
 
 
-    <li class="menu-item  active open">
+    <li class="menu-item  {{ set_active(['product.index','product.create', 'product.edit']) }} {{ set_open(['product.index','product.create', 'product.edit']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-carousel"></i>
         <div data-i18n="Layouts">Product</div>
       </a>
-      <ul class="menu-sub active">
-        <li class="menu-item active">
+      <ul class="menu-sub {{ set_active('product.index') }}">
+        <li class="menu-item {{ set_active('product.index') }}">
           <a href="{{route('product.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('product.create') }}">
           <a href="{{route('product.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
@@ -43,18 +43,18 @@
       </ul>
     </li>
     @role('super-admin')
-     <li class="menu-item  active open">
+     <li class="menu-item  {{ set_active(['roles.index','roles.create', 'roles.edit']) }} {{ set_open(['roles.index','roles.create', 'roles.edit']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-carousel"></i>
         <div data-i18n="Layouts">Roles</div>
       </a>
-      <ul class="menu-sub active">
-        <li class="menu-item active">
+      <ul class="menu-sub {{ set_active(['roles.index','roles.create', 'roles.edit']) }}">
+        <li class="menu-item {{ set_active('roles.index') }}">
           <a href="{{route('roles.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('roles.create') }}">
           <a href="{{route('roles.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
@@ -62,18 +62,18 @@
       </ul>
     </li>
 
-     <li class="menu-item  active open">
+     <li class="menu-item  {{ set_active(['users.index','users.create', 'users.edit']) }} {{ set_open(['users.index','users.create', 'users.edit']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-carousel"></i>
         <div data-i18n="Layouts">Users</div>
       </a>
-      <ul class="menu-sub active">
-        <li class="menu-item active">
+      <ul class="menu-sub {{ set_active(['users.index','users.create', 'users.edit']) }}">
+        <li class="menu-item {{ set_active('users.index') }}">
           <a href="{{route('users.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('users.create') }}">
           <a href="{{route('users.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
@@ -82,13 +82,13 @@
     </li> 
     @endrole
 
-    <li class="menu-item  active open">
+    <li class="menu-item  {{ set_active(['settings.index']) }} {{ set_open(['settings.index']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-carousel"></i>
         <div data-i18n="Layouts">Settings</div>
       </a>
-      <ul class="menu-sub active">
-        <li class="menu-item active">
+      <ul class="menu-sub {{ set_active('settings.index') }}">
+        <li class="menu-item {{ set_active('settings.index') }}">
           <a href="{{route('settings.index')}}" class="menu-link">
             <div data-i18n="Without menu">Edit</div>
           </a>
