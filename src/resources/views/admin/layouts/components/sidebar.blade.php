@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
-    <a href="{{route('home')}}" class="app-brand-link no-underline">
+    <a href="{{route('admin.dashboard')}}" class="app-brand-link no-underline">
       <span class="app-brand-logo demo">
 
       </span>
@@ -31,12 +31,12 @@
       </a>
       <ul class="menu-sub active">
         <li class="menu-item active">
-          <a href="" class="menu-link">
+          <a href="{{route('product.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
+          <a href="{{route('product.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
         </li>
@@ -50,12 +50,12 @@
       </a>
       <ul class="menu-sub active">
         <li class="menu-item active">
-          <a href="" class="menu-link">
+          <a href="{{route('roles.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
+          <a href="{{route('roles.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
         </li>
@@ -69,12 +69,12 @@
       </a>
       <ul class="menu-sub active">
         <li class="menu-item active">
-          <a href="" class="menu-link">
+          <a href="{{route('users.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
         <li class="menu-item ">
-          <a href="" class="menu-link">
+          <a href="{{route('users.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
         </li>
@@ -89,7 +89,7 @@
       </a>
       <ul class="menu-sub active">
         <li class="menu-item active">
-          <a href="" class="menu-link">
+          <a href="{{route('settings.index')}}" class="menu-link">
             <div data-i18n="Without menu">Edit</div>
           </a>
         </li>
