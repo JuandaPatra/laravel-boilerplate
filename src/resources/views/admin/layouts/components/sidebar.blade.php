@@ -82,6 +82,7 @@
     </li> 
     @endrole
 
+    @can('edit settings')
     <li class="menu-item  {{ set_active(['settings.index']) }} {{ set_open(['settings.index']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-carousel"></i>
@@ -95,6 +96,7 @@
         </li>
       </ul>
     </li>
+    @endcan
 
     {{--
       <li class="menu-header small text-uppercase">

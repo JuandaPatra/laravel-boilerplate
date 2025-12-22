@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('tools/ajax-roles', [App\Http\Controllers\Admin\AjaxToolsController::class, 'ajaxRoles'])->name('tools.ajax.roles');
     
         // settings
-        Route::get('settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings.index');
-        Route::post('settings', [App\Http\Controllers\Admin\SettingsController::class, 'update'])->name('settings.update');
+        Route::get('settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->middleware('permission:edit settings')->name('settings.index');
+        Route::post('settings', [App\Http\Controllers\Admin\SettingsController::class, 'update'])->middleware('permission:edit settings')->name('settings.update');
     });
 });
