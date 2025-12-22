@@ -10,7 +10,7 @@ class Settings extends Model
 
     public static function get($key, $default = null)
     {
-        return cache()->rememberForever("setting_{$key}", function () use ($key, $default) {
+    return cache()->rememberForever("setting_{$key}", function () use ($key, $default) {
             return optional(
                 self::where('key', $key)->first()
         )->value ?? $default;
