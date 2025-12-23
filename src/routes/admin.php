@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         Route::get('roles/ajax', [App\Http\Controllers\Admin\RoleController::class, 'ajax'])->name('roles.ajax');
-        Route::resource('roles', App\Http\Controllers\Admin\RoleController::class);
+        Route::resource('roles', App\Http\Controllers\Admin\RoleController::class)->middleware('permission:create role|edit role|delete role');
         
         Route::get('users/ajax', [App\Http\Controllers\Admin\UserController::class, 'ajax'])->name('users.ajax');
         Route::resource('users', App\Http\Controllers\Admin\UserController::class);});
