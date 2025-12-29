@@ -22,11 +22,13 @@ Pastikan sudah terinstall:
 git clone https://github.com/JuandaPatra/laravel-boilerplate.git
 cd laravel-boilerplate
 
+---
 
 🐳 Menjalankan dengan Docker (Docker Desktop / Engine)
 ▶️ Build & Jalankan Container
+```bash
 docker compose up -d --build
-
+---
 
 Perintah ini akan:
 
