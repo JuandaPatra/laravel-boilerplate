@@ -67,7 +67,7 @@ Podman kompatibel dengan docker-compose.yml.
 
 ▶️ Build & Jalankan Container
 ```bash
-podman compose up -d --build
+podman-compose up -d --build
 ```
 
 Podman berjalan tanpa daemon dan lebih ringan dibanding Docker.
@@ -93,5 +93,5 @@ podman ps
 
 ⛔ Stop / Remove Container
 ```bash
-podman compose down
+podman-compose down
 ```
