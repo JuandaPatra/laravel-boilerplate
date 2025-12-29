@@ -1,46 +1,84 @@
+# 🐳 Laravel Boilerplate — Docker & Podman
+
+Project Laravel ini sudah disiapkan untuk dijalankan menggunakan **Docker** maupun **Podman** melalui file `docker-compose.yml`.
+
+---
+
+## 📦 Prasyarat
+
+Pastikan sudah terinstall:
+
+- Git
+- Docker **atau** Podman
+- docker-compose (Docker)
+- podman-compose (Podman)
+- PHP & Composer (opsional, jika tidak sepenuhnya lewat container)
+
+---
+
+## 📥 Clone Repository
+
+```bash
+git clone https://github.com/JuandaPatra/laravel-boilerplate.git
+cd laravel-boilerplate
+
+
 🐳 Menjalankan dengan Docker (Docker Desktop / Engine)
-Jalankan Containers
+▶️ Build & Jalankan Container
 docker compose up -d --build
 
 
-Ini akan membangun dan menjalankan semua service yang ada di docker-compose.yml seperti app, web server, db, dll.
+Perintah ini akan:
 
-Akses Shell Container (opsional)
+Build image dari Dockerfile
+
+Menjalankan semua service di docker-compose.yml
+
+Menjalankan container di background
+
+🖥️ Akses Shell Container (Opsional)
 docker exec -it <app_container_name> bash
 
 
-Contoh nama container bisa dilihat dari:
+Untuk melihat nama container:
 
 docker ps
 
-Install dependencies & migrations
+📦 Install Dependencies & Migrasi
 
-Jika belum diinstall lewat build:
+Jika belum dilakukan saat build:
 
 docker exec -it <app_container_name> bash
 composer install
+php artisan key:generate
 php artisan migrate --seed
 npm install
 npm run dev
 
-Stop / Remove containers
+⛔ Stop / Remove Container
 docker compose down
 
 🐧 Menjalankan dengan Podman
 
-Podman kompatibel dengan file docker-compose.yml, jadi kamu tinggal pakai:
+Podman kompatibel dengan docker-compose.yml.
 
+▶️ Build & Jalankan Container
 podman compose up -d --build
 
 
-Pastikan podman dan podman-compose sudah terpasang.
-Podman menangani container tanpa daemon seperti Docker.
+Podman berjalan tanpa daemon dan lebih ringan dibanding Docker.
 
-Jika perintah tidak jalan, install podman compose:
-``
-sudo dnf install podman-compose  # (Fedora / RHEL)
-# atau sesuaikan dengan distro kamu
-Podman Exec
+🧩 Install podman-compose (Jika belum ada)
+Fedora / RHEL
+sudo dnf install podman-compose
+
+Ubuntu / Debian
+sudo apt install podman-compose
+
+🖥️ Akses Shell Container (Podman)
 podman exec -it <app_container_name> bash
-``
-📌 Tips
+
+
+Cek container yang berjalan:
+
+podman ps
