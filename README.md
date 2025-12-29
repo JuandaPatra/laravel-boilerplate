@@ -38,27 +38,29 @@ Menjalankan semua service di docker-compose.yml
 Menjalankan container di background
 
 🖥️ Akses Shell Container (Opsional)
+```bash
 docker exec -it <app_container_name> bash
-
+```
 
 Untuk melihat nama container:
-
+```bash
 docker ps
-
+```
 📦 Install Dependencies & Migrasi
 
 Jika belum dilakukan saat build:
-
+```bash
 docker exec -it <app_container_name> bash
 composer install
 php artisan key:generate
 php artisan migrate --seed
 npm install
 npm run dev
-
+```
 ⛔ Stop / Remove Container
+```bash
 docker compose down
-
+```
 🐧 Menjalankan dengan Podman
 
 Podman kompatibel dengan docker-compose.yml.
