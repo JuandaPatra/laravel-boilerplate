@@ -61,27 +61,32 @@ npm run dev
 ```bash
 docker compose down
 ```
-🐧 Menjalankan dengan Podman
+🦭 Menjalankan dengan Podman
 
 Podman kompatibel dengan docker-compose.yml.
 
 ▶️ Build & Jalankan Container
+```bash
 podman compose up -d --build
-
+```
 
 Podman berjalan tanpa daemon dan lebih ringan dibanding Docker.
 
 🧩 Install podman-compose (Jika belum ada)
+```bash
 Fedora / RHEL
 sudo dnf install podman-compose
-
+```
+```bash
 Ubuntu / Debian
 sudo apt install podman-compose
-
+```
 🖥️ Akses Shell Container (Podman)
+```bash
 podman exec -it <app_container_name> bash
-
+```
 
 Cek container yang berjalan:
-
+```bash
 podman ps
+```
