@@ -90,3 +90,8 @@ Cek container yang berjalan:
 ```bash
 podman ps
 ```
+
+⛔ Stop / Remove Container
+```bash
+podman compose down
+```
